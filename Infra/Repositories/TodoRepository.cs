@@ -107,8 +107,7 @@ namespace Infra.Repositories
             Nome,
             Valor
             from Todo
-            where StatusCadastro = 1
-            and GuidId = @GuidId
+            where GuidId = @GuidId
             ");
             using var connection = _context.DapperConnection();
             var response = await connection.QuerySingleOrDefaultAsync<TodoEntity>(
@@ -130,7 +129,6 @@ namespace Infra.Repositories
             Nome,
             Valor
             from Todo
-            where StatusCadastro = 1
             order by DataCadastro desc
             ");
             using var connection = _context.DapperConnection();
